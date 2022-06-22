@@ -7,7 +7,6 @@ blueprint_transcript = Blueprint(name="blueprint_transcript", import_name=__name
 
 @blueprint_transcript.route('/', methods=['POST'])
 def post():
-    print(request.files)
     uploaded_file = request.files['audio']
     filename = secure_filename(uploaded_file.filename)
     if filename != '':

@@ -7,7 +7,7 @@ from keras import layers
 from keras.models import load_model
 import keras
 
-commands = np.array(['light', 'fan', 'turn on', 'turn off'])
+commands = np.array(['đèn', 'quạt', 'bật', 'tắt'])
 
 def auc(y_true, y_pred):
     auc = tf.metrics.auc(y_true, y_pred)[1]
