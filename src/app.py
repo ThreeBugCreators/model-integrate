@@ -6,7 +6,7 @@ import sys
 
 
 # load modules
-from src.endpoints.blueprint_transcript import blueprint_transcript
+from src.endpoints.blueprint_transcript import predict_api
 from src.endpoints.swagger import swagger_ui_blueprint, SWAGGER_URL
 
 # init Flask app
@@ -17,7 +17,7 @@ app.config['UPLOAD_PATH'] = 'uploads'
 app.config['MODEL_PATH'] = 'model'
 
 # register blueprints. ensure that all paths are versioned!
-app.register_blueprint(blueprint_transcript, url_prefix="/api/v1/transcript")
+app.register_blueprint(predict_api, url_prefix="/api/v1/predictions")
 
 from src.api_spec import spec
 # register all swagger documented functions here
